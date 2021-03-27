@@ -1,0 +1,65 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  background: #3D7DCA;
+  text-align: center;
+  font-size: 3em;
+}
+
+header h1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #FFCB05;
+}
+
+.textStyle {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background: #3D7DCA;
+  color: #FFCB05;
+  text-align: center;
+  font-size: 3em;
+  margin-top: 32px;
+}
+
+.pokeCards {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  margin-top: 2em;
+}
+
+.pokeCard1 {
+  border: 5px solid #3D7DCA;
+  border-radius: 7px;
+  padding: 1.5rem;
+}
+
+.pokeCard2 {
+  border: 5px solid #3D7DCA;
+  border-radius: 7px;
+  padding: 1.5rem;
+}
+
+.pokeCard3 {
+  border: 5px solid #3D7DCA;
+  border-radius: 7px;
+  padding: 1.5rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  text-align: center;
+}
+
+a:hover {
+  background-color: #FFCB05;
+}
+/*# sourceMappingURL=style.css.map */
