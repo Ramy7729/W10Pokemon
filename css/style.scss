@@ -67,6 +67,19 @@ a {
     }
 }
 
-// .selectColor {
+.battleGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    place-items: center;
+    
 
-// }
+    h1, h2, h3 {
+        text-align: center;
+    }
+}
+
+
+
+
+
