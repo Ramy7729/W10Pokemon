@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Battle</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -13,14 +13,15 @@
             <h1 id="myPokemonHP"></h1>
             <img id="myPokemonImage">
             <h2 id="myPokemonName"></h2>
-            <h3>Attack</h3>
+            <a class="button" onclick="attack()" href="">Attack</a>
         </div>
         <div>
             <h1 id="cpuHealth"></h1>
             <img src="images/magikarp.jpeg" alt="Magikarp from Pokemon">
-            <h2>Magikarp</h2>
+            <h2 class="mrgBtm">Magikarp</h2>
         </div>
     </main>
+    <div id="winLoseText" class="hidden"></div>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script src="js/battle.js"></script>
 </body>

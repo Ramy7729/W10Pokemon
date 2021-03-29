@@ -1,3 +1,5 @@
+// Collaborated with Liz for this assignment.
+
 // Created a function that will update and display the user and enemy health along with their names.
 // Cookies.get will retrieve the value of the specified cookie.
 function update() {
@@ -10,11 +12,36 @@ function update() {
         document.getElementById("myPokemonImage").setAttribute("alt", "Pikachu from Pokemon");
     } else if (Cookies.get("userPokemonSelection") === "Jigglypuff") {
         document.getElementById("myPokemonImage").setAttribute("src", "images/jigglypuff.jpeg");
-        document.getElementById("myPokemonImage").setAttribute("alt", "Jigglypuff form Pokemon");
+        document.getElementById("myPokemonImage").setAttribute("alt", "Jigglypuff fromm Pokemon");
     } else if (Cookies.get("userPokemonSelection") === "Psyduck") {
         document.getElementById("myPokemonImage").setAttribute("src", "images/psyduck.jpeg");
         document.getElementById("myPokemonImage").setAttribute("alt", "Psyduck from Pokemon");
     }
+    // Specific text appears on screen depending on who is the winner.
+    if (Cookies.get("computerCurrentHealth") <= 0) {
+        document.getElementById("winLoseText").innerHTML = "YOU WIN!";
+        document.getElementById("winLoseText").classList.remove("hidden");
+    } else if (Cookies.get("userCurrentHealth") <= 0) {
+        document.getElementById("winLoseText").innerHTML = "YOU LOSE!";
+        document.getElementById("winLoseText").classList.remove("hidden");
+    }
+}
+
+// Attack function used with the onclick attribute to attack the cpu.
+// Attack function stops when the user wins the battle.
+function attack() {
+    if (Cookies.get("computerCurrentHealth") <= 0) {
+        return;
+    }
+    // User and cpu attack damage is based on the Math.floor and Math.random function to randomize damage within a range of 7-11.
+    var enemyHealth = Cookies.get("computerCurrentHealth") - (Math.floor(Math.random() * 5) + 7);
+    Cookies.set("computerCurrentHealth", enemyHealth);
+    if (enemyHealth > 0) {
+        var myHealth = Cookies.get("userCurrentHealth") - (Math.floor(Math.random() * 5) + 7);
+        Cookies.set("userCurrentHealth", myHealth); 
+    }
+
+    update();
 }
 
 // Setting cookies to store the values of the user's selected Pokemon along with their health and the cpu's.

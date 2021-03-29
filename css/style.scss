@@ -15,8 +15,6 @@ header {
     }
 }
 
-
-
 .textStyle {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background: #3D7DCA; 
@@ -35,23 +33,11 @@ header {
     
 }
 
-.pokeCard1 {
+.pokeCard {
     border: 5px solid #3D7DCA;
     border-radius: 7px;
     padding: 1.5rem;
 
-}
-
-.pokeCard2 {
-    border: 5px solid #3D7DCA;
-    border-radius: 7px;
-    padding: 1.5rem;
-}
-
-.pokeCard3 {
-    border: 5px solid #3D7DCA;
-    border-radius: 7px;
-    padding: 1.5rem;
 }
 
 img {
@@ -72,12 +58,54 @@ a {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     place-items: center;
+    margin-top: 3em;
     
-
-    h1, h2, h3 {
+    
+    h1, h2 {
         text-align: center;
     }
 }
+
+#winLoseText {
+    font-size: 3em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hidden {
+    display: none;
+}
+
+.button {
+	background-color:#3D7DCA;
+	border-radius: 3px;
+	border:1px solid #000000;
+	display: inline-block;
+	cursor: pointer;
+	color:#ffffff;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size: 2em;
+	padding: 9px 27px;
+	text-decoration: none;
+    margin-top: 20px;
+    margin-left: 5em;
+	
+    &:hover {
+	background-color:#0688fa;
+    }
+    &:active {
+	position: relative;
+	top: 1px;
+    }
+}
+
+.mrgBtm {
+    margin-bottom: 3em;
+}
+
+
 
 
 
