@@ -28,17 +28,17 @@ function update() {
 }
 
 // Attack function used with the onclick attribute to attack the cpu.
-// Attack function stops when the user wins the battle.
+// Attack function stops when the user or cpu wins the battle.
 function attack() {
-    if (Cookies.get("computerCurrentHealth") <= 0) {
+    if (Cookies.get("computerCurrentHealth") <= 0 || Cookies.get("userCurrentHealth") <= 0) {
         return;
     }
     // User and cpu attack damage is based on the Math.floor and Math.random function to randomize damage within a range of 7-11.
     var enemyHealth = Cookies.get("computerCurrentHealth") - (Math.floor(Math.random() * 5) + 7);
-    Cookies.set("computerCurrentHealth", enemyHealth);
+    Cookies.set("computerCurrentHealth", enemyHealth, {expires: 365});
     if (enemyHealth > 0) {
-        var myHealth = Cookies.get("userCurrentHealth") - (Math.floor(Math.random() * 5) + 7);
-        Cookies.set("userCurrentHealth", myHealth); 
+        var myHealth = Cookies.get("userCurrentHealth",) - (Math.floor(Math.random() * 5) + 7);
+        Cookies.set("userCurrentHealth", myHealth, {expires: 365}); 
     }
 
     update();
@@ -48,12 +48,12 @@ function attack() {
 // These cookies will be used in other functions that updates the user and cpu health when they are attacked.
 var selectedPokemon = Cookies.get("selection");
 if (selectedPokemon !== undefined) {
-    Cookies.set("userPokemonSelection", selectedPokemon);
-    Cookies.set("userCurrentHealth", 100);
-    Cookies.set("computerCurrentHealth", 100);
-    Cookies.set("userMaxHealth", 100);
-    Cookies.set("computerMaxHealth", 100);
-    Cookies.set("computerPokemonSelection", "Magikarp");
+    Cookies.set("userPokemonSelection", selectedPokemon, {expires: 365});
+    Cookies.set("userCurrentHealth", 100, {expires: 365});
+    Cookies.set("computerCurrentHealth", 100, {expires: 365});
+    Cookies.set("userMaxHealth", 100, {expires: 365});
+    Cookies.set("computerMaxHealth", 100, {expires: 365});
+    Cookies.set("computerPokemonSelection", "Magikarp", {expires: 365});
     // Remove this cookie to show if the user selected a new Pokemon to start a new game.
     Cookies.remove("selection");
 }
